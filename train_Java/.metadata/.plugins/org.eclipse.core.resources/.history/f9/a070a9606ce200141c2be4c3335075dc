@@ -1,0 +1,13 @@
+/**
+ * @author shin
+ *
+ */
+public class Knock001 {
+
+	public static void main(String[] args) {
+		// TODO 自動生成されたメソッド・スタブ
+		String tok = "パタトクカシーー"; 
+		System.out.printf("%c%c%c%c\n", tok.charAt(0), tok.charAt(2), tok.charAt(4), tok.charAt(6));
+	}
+
+}
