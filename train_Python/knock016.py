@@ -7,22 +7,14 @@ import argparse
 
 def main(n, my_text, divide_name):
     my_list1 = []
-    line_count = 0
     for line in open(my_text):
         my_list1.append(line.strip())
-        line_count += 1
 
-    spl_num = line_count / n
-
-    file_count = 0
-    roop_count = 0
-    for line in my_list1:
-        f = open('%s.%d.txt' % (divide_name, file_count), 'a')
-        f.write(line+"\n")
-        roop_count += 1
-        if roop_count == spl_num:
-            file_count += 1
-            roop_count = 0
+    l = len(my_list1) / n
+    all_list = [my_list1[x:x + l] for x in xrange(0, len(my_list1), l)]
+    for i in range(n):
+        f = open('%s.%d.txt' % (divide_name, i), 'w')
+        f.write("\n".join(all_list[i - 1]))
         f.close
 
 
