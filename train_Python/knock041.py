@@ -56,13 +56,21 @@ class Chunk:
         return w
 
 
-    def morphs_base_return(self):
+    def return_morphs_base(self):
         for morphs in self.morphs:
-            if morphs.pos == "名詞" or morphs.pos == "動詞" or  morphs.pos == "形容詞":
+            #if morphs.pos == "名詞" or morphs.pos == "動詞" or  morphs.pos == "形容詞":
+            if morphs.pos == "動詞":
                 if morphs.base != "*":
                     return morphs.base
                 else:
                     return morphs.surf
+        return False
+
+
+    def return_morphs_par(self):
+        for morphs in self.morphs:
+            if morphs.pos == "助詞":
+                return morphs.base
         return False
 
 
