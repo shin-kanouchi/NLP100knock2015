@@ -72,17 +72,6 @@ class Chunk:
                 return morphs.base
         return False
 
-    def isSahenWoVerb(self):
-        for i, m in enumerate(self.morphs):
-            if m.pos == '名詞' and m.pos1 == 'サ変可能':
-                try:
-                    m1 = self.morphs[i+1]
-                    m2 = self.morphs[i+2]
-                    if m1.pos == '助詞' and m1.surface == 'を' and m2.pos == '動詞':
-                        return True 
-                except IndexError:
-                    continue
-
 
 def make_morph(open_file):
     kakari_dict = defaultdict(list)
